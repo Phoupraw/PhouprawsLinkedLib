@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "phoupraws_linked_lib",
+  "version": "${version}",
+  "name": "Phoupraw's Linked Lib",
+  "description": "TODO",
+  "authors": [
+    "Phoupraw"
+  ],
+  "environment": "*",
+  "depends": {
+    "fabricloader": "*",
+    "fabric-api": "*",
+    "fabric-language-kotlin": "*"
+  },
+  "recommends": {
+    "modmenu": "*"
+  },
+  "mixins": ["phoupraws_linked_lib.mixins.json"],
+  "icon": "assets/phoupraws_linked_lib/icon.png",
+  "custom": {
+    "modmenu": {
+      "badges": ["library"]
+    }
+  },
+  "license": "MPL-2.0"
+}

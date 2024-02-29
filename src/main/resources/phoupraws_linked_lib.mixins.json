@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "phoupraw.mcmod.linked.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "fabric.AItemApiLookupImpl",
+    "fabric.MCombinedProvidersImpl",
+    "fabric.MFluidStorage",
+    "minecraft.AAbstractFurnaceBlockEntity",
+    "minecraft.ABlockWithEntity",
+    "minecraft.AExperienceOrbEntity",
+    "minecraft.ALivingEntity",
+    "minecraft.ASimpleInventory",
+    "minecraft.AStatusEffectInstance"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
