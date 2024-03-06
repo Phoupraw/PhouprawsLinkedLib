@@ -9,7 +9,7 @@ import net.minecraft.inventory.SimpleInventory
 import net.minecraft.nbt.NbtCompound
 import phoupraw.mcmod.linked.mixin.minecraft.ASimpleInventory
 
-open class NbtSimpleInventory private constructor(val nbt: NbtCompound, size: Int) : SimpleInventory(size) {
+open class NbtSimpleInventory private constructor(open val nbt: NbtCompound, size: Int) : SimpleInventory(size) {
     init {
         Inventories.readNbt(nbt, (this as ASimpleInventory).stacks)
         addListener { Inventories.writeNbt(nbt, (this as ASimpleInventory).stacks) }

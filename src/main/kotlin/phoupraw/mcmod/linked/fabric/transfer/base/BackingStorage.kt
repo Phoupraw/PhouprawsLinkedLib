@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.transfer.v1.storage.base.ExtractionOnlyStorage
 import net.fabricmc.fabric.api.transfer.v1.storage.base.InsertionOnlyStorage
 import net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext
 
-open class BackingStorage<T, out S : Storage<T>>(val back: S) : Storage<T> by back {
+open class BackingStorage<T, out S : Storage<T>>(open val back: S) : Storage<T> by back {
     //FIXME iterator
     class InsertionOnly<T, out S : Storage<T>>(back: S) : BackingStorage<T, S>(back), InsertionOnlyStorage<T> {
         override fun supportsExtraction(): Boolean = false

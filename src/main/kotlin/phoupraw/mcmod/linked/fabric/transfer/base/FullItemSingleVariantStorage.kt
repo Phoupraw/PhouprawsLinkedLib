@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext
 import phoupraw.mcmod.linked.fabric.transfer.storage.ItemVariant
 import phoupraw.mcmod.linked.minecraft.plus
 
-abstract class FullItemSingleVariantStorage<T : TransferVariant<*>>(context: ContainerItemContext, val storedResource: T, val storedAmount: Long, val emptied: ItemVariant = ItemVariant()) : ItemSingleSlotStorage<T>(context), ExtractionOnlyStorage<T> {
+abstract class FullItemSingleVariantStorage<T : TransferVariant<*>>(context: ContainerItemContext, open val storedResource: T, open val storedAmount: Long, open val emptied: ItemVariant = ItemVariant()) : ItemSingleSlotStorage<T>(context), ExtractionOnlyStorage<T> {
     override fun getResource(currentVariant: ItemVariant): T = storedResource
     override fun getAmount(currentVariant: ItemVariant): Long = storedAmount
     override fun getCapacity(currentVariant: ItemVariant, variant: T): Long = storedAmount

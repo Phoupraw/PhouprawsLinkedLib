@@ -13,7 +13,7 @@ import org.jetbrains.annotations.ApiStatus
 import kotlin.math.min
 
 @ApiStatus.Experimental
-abstract class ItemSingleSlotStorage<T : TransferVariant<*>>(val context: ContainerItemContext) : SingleSlotStorage<T> {
+abstract class ItemSingleSlotStorage<T : TransferVariant<*>>(open val context: ContainerItemContext) : SingleSlotStorage<T> {
     val item: Item = context.itemVariant.item
     protected abstract val blankResource: T
     protected abstract fun getResource(currentVariant: ItemVariant): T
