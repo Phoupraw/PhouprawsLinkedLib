@@ -10,7 +10,7 @@ import phoupraw.mcmod.linked.api.util.SingleApiFinder
 import phoupraw.mcmod.linked.fabric.transfer.base.FullItemSingleVariantStorage
 import phoupraw.mcmod.linked.fabric.transfer.storage.ItemVariant
 
-class FullItemXpStorage(context: ContainerItemContext, amount: Long, emptied: ItemVariant = ItemVariant()) : FullItemSingleVariantStorage<Xp>(context, Xp, amount, emptied) {
+open class FullItemXpStorage(context: ContainerItemContext, amount: Long, emptied: ItemVariant = ItemVariant()) : FullItemSingleVariantStorage<Xp>(context, Xp, amount, emptied) {
     override val blankResource: Xp get() = Xp
     @get:JvmName("isResourceBlank")
     override val resourceBlank: Boolean get() = false

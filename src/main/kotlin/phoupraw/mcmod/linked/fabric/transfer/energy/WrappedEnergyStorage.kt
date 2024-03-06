@@ -20,7 +20,7 @@ import team.reborn.energy.api.EnergyStorage
  * 把[EnergyStorage]包装成`[Storage]<[Energy]>`
  * @see EnergyStorageWrapper
  */
-class WrappedEnergyStorage private constructor(var back: EnergyStorage) : SingleSlotStorage<Energy> {
+open class WrappedEnergyStorage private constructor(var back: EnergyStorage) : SingleSlotStorage<Energy> {
     override fun supportsInsertion(): Boolean {
         return back.supportsInsertion()
     }

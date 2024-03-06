@@ -7,7 +7,7 @@ import phoupraw.mcmod.linked.fabric.transfer.storage.amount
 import phoupraw.mcmod.linked.fabric.transfer.storage.capacity
 import team.reborn.energy.api.EnergyStorage
 
-class EnergyStorageWrapper private constructor(val back: Storage<Energy>) : EnergyStorage {
+open class EnergyStorageWrapper private constructor(val back: Storage<Energy>) : EnergyStorage {
     override fun supportsInsertion(): Boolean {
         return back.supportsInsertion()
     }

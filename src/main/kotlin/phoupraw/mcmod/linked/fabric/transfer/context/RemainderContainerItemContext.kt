@@ -15,7 +15,7 @@ import phoupraw.mcmod.linked.fabric.transfer.item.InfCapacityItemStorage
 import phoupraw.mcmod.linked.fabric.transfer.storage.*
 import java.io.Closeable
 
-class RemainderContainerItemContext(
+open class RemainderContainerItemContext(
   val internalMainSlot: SingleSlotStorage<ItemVariant>,
   val overflow: (resource: ItemVariant, maxAmount: Long, transaction: TransactionContext) -> Unit,
   override val additionalSlots: List<SingleSlotStorage<ItemVariant>>

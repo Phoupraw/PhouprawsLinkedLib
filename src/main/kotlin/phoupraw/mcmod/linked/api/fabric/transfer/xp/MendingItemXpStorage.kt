@@ -10,7 +10,7 @@ import net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext
 import phoupraw.mcmod.linked.fabric.transfer.base.ItemSingleSlotStorage
 import phoupraw.mcmod.linked.fabric.transfer.storage.ItemVariant
 
-class MendingItemXpStorage /*private constructor*/(context: ContainerItemContext) : ItemSingleSlotStorage<Xp>(context), InsertionOnlyStorage<Xp> {
+open class MendingItemXpStorage /*private constructor*/(context: ContainerItemContext) : ItemSingleSlotStorage<Xp>(context), InsertionOnlyStorage<Xp> {
     override val blankResource: Xp get() = Xp
     override fun getResource(currentVariant: ItemVariant): Xp = Xp
     override fun getAmount(currentVariant: ItemVariant): Long = currentVariant.toStack().run { (maxDamage - damage) / 2 }.toLong()
