@@ -51,7 +51,7 @@ dependencies {
     minecraft("com.mojang:minecraft:$minecraftVersion")
     mappings("net.fabricmc:yarn:${property("yarn_mappings")}:v2")
     modCompileOnly("net.fabricmc:fabric-loader:${property("loader_version")}")
-    modCompileOnly("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin_version")}")
+    modApi("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin_version")}") { exclude(module = "fabric-loader") }
     //    modApi("dev.isxander.yacl:yet-another-config-lib-fabric:${property("yet_another_config_lib")}")
     //    modLocalRuntime("com.terraformersmc:modmenu:${property("modmenu")}")
     //compileOnlyApi(annotationProcessor("org.projectlombok:lombok:${property("lombok")}")!!)
