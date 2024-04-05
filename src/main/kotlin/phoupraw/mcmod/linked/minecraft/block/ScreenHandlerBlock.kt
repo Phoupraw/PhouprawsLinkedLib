@@ -12,7 +12,7 @@ import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 
-class ScreenHandlerBlock(settings: Settings) : NameableBlock(settings) {
+open class ScreenHandlerBlock(settings: Settings) : NameableBlock(settings) {
     override fun createScreenHandlerFactory(state: BlockState, world: World, pos: BlockPos): NamedScreenHandlerFactory? {
         return createScreenHandlerFactory(this, state, world, pos)
     }

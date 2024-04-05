@@ -23,3 +23,5 @@ operator fun Long?.plus(value: Long) = this?.plus(value) ?: value
 operator fun Long?.plus(value: Int) = this?.plus(value) ?: value
 operator fun Double?.plus(value: Int) = this?.plus(value) ?: value
 operator fun Double?.plus(value: Double) = this?.plus(value) ?: value
+fun Boolean.toInt() = if (this) 1 else 0
+fun Int.toBoolean() = this != 0

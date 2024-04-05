@@ -11,7 +11,7 @@
     "minecraft.AExperienceOrbEntity",
     "minecraft.ALivingEntity",
     "minecraft.ASimpleInventory",
-    "minecraft.AStatusEffectInstance"
+    "minecraft.AStatusEffectInstance", "yacl.MSimpleOptionFactory"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -6,7 +6,9 @@ import net.minecraft.enchantment.Enchantment
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.effect.StatusEffect
 import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.fluid.FlowableFluid
 import net.minecraft.fluid.Fluid
+import net.minecraft.fluid.FluidState
 import net.minecraft.item.Item
 import net.minecraft.potion.Potion
 import net.minecraft.recipe.RecipeType
@@ -17,6 +19,7 @@ import net.minecraft.sound.SoundEvent
 import net.minecraft.util.Identifier
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.world.World
+import kotlin.math.min
 
 //val StatusEffect.id:Identifier? get() = Registries.STATUS_EFFECT.getId(this)
 fun <T> Registry<in T>.register(id: Identifier, value: T): T = Registry.register(this, id, value)
@@ -41,3 +44,4 @@ val RecipeType<*>.id: Identifier? get() = Registries.RECIPE_TYPE.getId(this)
 fun VoxelShape(xMin: Int, yMin: Int, zMin: Int, xMax: Int, yMax: Int, zMax: Int): VoxelShape = Block.createCuboidShape(xMin.toDouble(), yMin.toDouble(), zMin.toDouble(), xMax.toDouble(), yMax.toDouble(), zMax.toDouble())
 fun World.playSound(except: PlayerEntity, sound: SoundEvent, category: SoundCategory = SoundCategory.PLAYERS, volume: Float = 1f, pitch: Float = 1f) = playSound(except, except.x, except.y + except.height / 2, except.z, sound, category, volume, pitch)
 fun Identifier.toShortString(): String = if (namespace == Identifier.DEFAULT_NAMESPACE) path else toString()
+val FluidState.blockStateLevel: Int get() = if (isStill) 0 else (8 - min(level, 8) + (if (get(FlowableFluid.FALLING)) 8 else 0))

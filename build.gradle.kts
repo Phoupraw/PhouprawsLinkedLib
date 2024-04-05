@@ -35,8 +35,11 @@ repositories {
     maven("https://maven.quiltmc.org/repository/release") {
         content {
             includeGroup("org.quiltmc.parsers")
-            includeGroup("com.twelvemonkeys.imageio")
-            includeGroup("com.twelvemonkeys.common")
+        }
+    }
+    maven("https://oss.sonatype.org/content/repositories/snapshots") {
+        content {
+            includeGroupAndSubgroups("com.twelvemonkeys")
         }
     }
     maven("https://maven.terraformersmc.com/") {
@@ -52,7 +55,7 @@ dependencies {
     mappings("net.fabricmc:yarn:${property("yarn_mappings")}:v2")
     modCompileOnly("net.fabricmc:fabric-loader:${property("loader_version")}")
     modApi("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin_version")}") { exclude(module = "fabric-loader") }
-    //    modApi("dev.isxander.yacl:yet-another-config-lib-fabric:${property("yet_another_config_lib")}")
+    modCompileOnly(modLocalRuntime("dev.isxander.yacl:yet-another-config-lib-fabric:${property("yet_another_config_lib")}")!!)
     //    modLocalRuntime("com.terraformersmc:modmenu:${property("modmenu")}")
     //compileOnlyApi(annotationProcessor("org.projectlombok:lombok:${property("lombok")}")!!)
     include(modApi("teamreborn:energy:${property("energy_api")}") {
